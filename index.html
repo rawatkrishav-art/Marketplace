@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReLoop — Second-Hand Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">re<span>loop</span>.</div>
+  <nav class="nav"><a href="#explore">Explore</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+  <button class="sell-btn" id="openSell">＋ Sell an item</button>
+</header>
+<section class="hero">
+  <div>
+    <div class="eyebrow">A better way to shop pre-loved</div>
+    <h1>Good finds.<br><em>Second lives.</em></h1>
+    <p>Discover quality pre-owned products from people around you. Give great things another chapter — and save while you do it.</p>
+    <div class="hero-actions"><button class="primary" onclick="document.querySelector('#explore').scrollIntoView({behavior:'smooth'})">Explore marketplace ↗</button><button class="secondary" id="heroSell">Start selling</button></div>
+  </div>
+  <div class="hero-art"><div class="orbit"></div><div class="hero-product">🎧</div><div class="float-tag tag-one">♻  Give it a second life</div><div class="float-tag tag-two">✨ Great deals nearby</div></div>
+</section>
+<main class="wrap" id="explore">
+  <div class="section-head"><div><div class="eyebrow" style="color:#73984c">THE COMMUNITY MARKET</div><h2>Find your next favourite.</h2><p>Pre-loved products. Fresh possibilities.</p></div></div>
+  <div class="search-row"><div class="search"><input id="searchInput" type="search" placeholder="Search phones, furniture, books..."></div><select class="sort" id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div>
+  <div class="chips" id="chips"><button class="chip active" data-cat="All">All items</button><button class="chip" data-cat="Electronics">Electronics</button><button class="chip" data-cat="Fashion">Fashion</button><button class="chip" data-cat="Home">Home</button><button class="chip" data-cat="Books">Books</button><button class="chip" data-cat="Sports">Sports</button></div>
+  <div class="grid" id="productGrid"></div>
+  <section class="banner" id="how"><div><h2>Have something to pass on?</h2><p>Turn unused things into someone else's great find.</p></div><button id="bannerSell">List an item for free ↗</button></section>
+</main>
+<footer id="about"><div><div class="logo" style="color:white">re<span>loop</span>.</div><p>Make room for better things.</p></div><span>Demo marketplace · Built with HTML, CSS & JavaScript</span></footer>
+<div class="modal-backdrop" id="sellModal"><form class="modal" id="sellForm"><h2>List an item</h2><p>Add a few details to put your pre-loved item on the marketplace.</p>
+<label for="itemName">Product name</label><input id="itemName" required placeholder="e.g. Wireless headphones">
+<label for="itemPrice">Price (₹)</label><input id="itemPrice" type="number" min="1" required placeholder="e.g. 1200">
+<label for="itemCategory">Category</label><select id="itemCategory"><option>Electronics</option><option>Fashion</option><option>Home</option><option>Books</option><option>Sports</option></select>
+<label for="itemEmoji">Choose a product icon</label><select id="itemEmoji"><option>📱</option><option>🎧</option><option>👟</option><option>🪑</option><option>📚</option><option>🚲</option><option>⌚</option><option>🎮</option><option>👜</option></select>
+<div class="modal-actions"><button type="button" class="cancel" id="closeSell">Cancel</button><button class="primary" type="submit">Publish listing</button></div></form></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
